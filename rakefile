@@ -1,0 +1,46 @@
+require 'albacore'
+require 'nokogiri'
+
+desc "Builds solution, runs Unit Tests"
+task :default => [:build, :unit, :integration]
+
+desc "Build the solution in .Net 4.0"
+msbuild :build do |msb|
+	msb.properties :configuration => :Debug
+	msb.targets :Clean, :Build
+	msb.verbosity = 'quiet'
+	msb.solution = "Swampy.sln"
+end
+
+desc "Build the solution in .Net 4.0 release mode"
+msbuild :release_build do |msb|
+	msb.properties :configuration => :Release
+	msb.targets :Clean, :Build
+	msb.verbosity = 'quiet'
+	msb.solution = "Swampy.sln"
+end
+
+desc "Run Unit tests"
+nunit :unit do |nunit|
+	nunit.command = "packages/NUnit.Runners.2.6.2/tools/nunit-console-x86.exe"
+	nunit.assemblies "UnitTest/bin/Debug/Swampy.UnitTest.dll"
+	nunit.options '/xml=Results.UnitTest-results.xml'
+end
+
+desc "Run Integration tests"
+nunit :integration do |nunit|
+	nunit.command = "packages/NUnit.Runners.2.6.2/tools/nunit-console-x86.exe"
+	nunit.assemblies "IntegrationTest/bin/Debug/Swampy.IntegrationTest.dll"
+	nunit.options '/xml=Results.IntegrationTest-results.xml'
+end
+
+#desc "Updates the connection string for the Release build"
+#task :change_connection_string do
+#	file_name = 'FizzBuzz//bin//Release//FizzBuzz.exe.config'
+#	doc = Nokogiri::XML(File.read(file_name))
+#	conn = doc.at_css("connectionStrings add")
+#	conn['connectionString'] = "Production"
+#	f = File.open(file_name, 'w')
+#	f.write(doc.to_xml)
+#	f.close
+#end
