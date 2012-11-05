@@ -1,5 +1,4 @@
 require 'albacore'
-require 'nokogiri'
 
 desc "Builds solution, runs Unit Tests"
 task :default => [:build, :unit, :integration]
@@ -33,14 +32,3 @@ nunit :integration do |nunit|
 	nunit.assemblies "IntegrationTest/bin/Debug/Swampy.IntegrationTest.dll"
 	nunit.options '/xml=Results.IntegrationTest-results.xml'
 end
-
-#desc "Updates the connection string for the Release build"
-#task :change_connection_string do
-#	file_name = 'FizzBuzz//bin//Release//FizzBuzz.exe.config'
-#	doc = Nokogiri::XML(File.read(file_name))
-#	conn = doc.at_css("connectionStrings add")
-#	conn['connectionString'] = "Production"
-#	f = File.open(file_name, 'w')
-#	f.write(doc.to_xml)
-#	f.close
-#end
