@@ -1,14 +1,14 @@
 require 'albacore'
 
 desc "Builds solution, runs Unit Tests"
-task :default => [:build, :unit, :integration]
+task :default => [:build, :unit]
 
 desc "Build the solution in .Net 4.0"
 msbuild :build do |msb|
 	msb.properties :configuration => :Debug
 	msb.targets :Clean, :Build
 	msb.verbosity = 'quiet'
-	msb.solution = "Swampy.sln"
+	msb.solution = "ConfigGen.sln"
 end
 
 desc "Build the solution in .Net 4.0 release mode"
@@ -16,19 +16,19 @@ msbuild :release_build do |msb|
 	msb.properties :configuration => :Release
 	msb.targets :Clean, :Build
 	msb.verbosity = 'quiet'
-	msb.solution = "Swampy.sln"
+	msb.solution = "ConfigGen.sln"
 end
 
 desc "Run Unit tests"
 nunit :unit do |nunit|
 	nunit.command = "packages/NUnit.Runners.2.6.2/tools/nunit-console-x86.exe"
-	nunit.assemblies "UnitTest/bin/Debug/Swampy.UnitTest.dll"
+	nunit.assemblies "ConfigGen.UnitTest/bin/Debug/ConfigGen.UnitTest.dll"
 	nunit.options '/xml=Results.UnitTest-results.xml'
 end
 
 desc "Run Integration tests"
 nunit :integration do |nunit|
 	nunit.command = "packages/NUnit.Runners.2.6.2/tools/nunit-console-x86.exe"
-	nunit.assemblies "IntegrationTest/bin/Debug/Swampy.IntegrationTest.dll"
+	nunit.assemblies "ConfigGen.IntegrationTest/bin/Debug/ConfigGen.IntegrationTest.dll"
 	nunit.options '/xml=Results.IntegrationTest-results.xml'
 end
