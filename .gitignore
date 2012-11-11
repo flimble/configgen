@@ -44,6 +44,6 @@ Core
 External
 lib/**/*.nupkg
 src/packages
-results/*
+TestResults/*
 
 src/Bottles.1.2.dotCover

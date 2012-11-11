@@ -23,12 +23,12 @@ desc "Run Unit tests"
 nunit :unit do |nunit|
 	nunit.command = "packages/NUnit.Runners.2.6.2/tools/nunit-console-x86.exe"
 	nunit.assemblies "ConfigGen.UnitTest/bin/Debug/ConfigGen.UnitTest.dll"
-	nunit.options '/xml=Results.UnitTest-results.xml'
+	nunit.options '/xml=TestResults/Results.UnitTest-results.xml'
 end
 
 desc "Run Integration tests"
 nunit :integration do |nunit|
 	nunit.command = "packages/NUnit.Runners.2.6.2/tools/nunit-console-x86.exe"
 	nunit.assemblies "ConfigGen.IntegrationTest/bin/Debug/ConfigGen.IntegrationTest.dll"
-	nunit.options '/xml=Results.IntegrationTest-results.xml'
+	nunit.options '/xml=TestResults/Results.IntegrationTest-results.xml'
 end

@@ -1,4 +1,4 @@
-**Swampy**
+**configgenerator**
 ----------
 
 Configuration management simplified
