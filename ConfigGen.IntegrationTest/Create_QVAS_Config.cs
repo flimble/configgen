@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ConfigGen.ConfigGen.SwampyProxy;
+﻿using System.Collections.Generic;
+using ConfigGen.Swampy.Service;
 using NUnit.Framework;
 
 
@@ -13,6 +9,7 @@ namespace SAIG.PS.ConfigGen.IntegrationTest
     public class Create_QVAS_Config
     {
         [Test]
+        [Explicit("not working yet. to be developed - presumably this is to be used to test specific files")]
         public void Do()
         {
             var identifier = new TokenIdentifier();
@@ -29,8 +26,7 @@ namespace SAIG.PS.ConfigGen.IntegrationTest
 
             var apps = new Dictionary<string, string>
                 {
-                    {"QVAS", @"SAIG.PS.QVAS\QVAS.Host\app.config.template.xml"},
-                    {"QVAS", @"SAIG.PS.QVAS\QVAS.Host\app.config.template.xml"}
+                    {"QVAS", @"SAIG.PS.QVAS\QVAS.Host\app.config.template.xml"},                    
 
                 };
 

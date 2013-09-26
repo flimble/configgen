@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fcd9b519-d678-4c21-bbf9-19629bc8397b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/EndpointService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="1055e65e-b855-48f5-9bc1-5141621facb7" SourceId="1" SourceUrl="http://localhost:8000/EndpointService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="07f613d5-f16d-4ef8-93ff-310dbf5d5b28" SourceId="1" SourceUrl="http://localhost:8000/EndpointService/?disco" />
+    <MetadataFile FileName="EndpointService.wsdl" MetadataType="Wsdl" ID="941ba9c3-2fba-41c8-9b8c-6a07cfa7142b" SourceId="1" SourceUrl="http://localhost:8000/EndpointService/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="51a42083-01ab-4361-802f-d11fdcc9f6e8" SourceId="1" SourceUrl="http://localhost:8000/EndpointService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="938a9abe-fc65-4791-976b-6ef234cb443d" SourceId="1" SourceUrl="http://localhost:8000/EndpointService/?xsd=xsd2" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="ca74c7d8-fae6-45f5-b2ea-c43851a6b8dc" SourceId="1" SourceUrl="http://localhost:8000/EndpointService/?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

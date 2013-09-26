@@ -1,10 +1,8 @@
 ﻿using System;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using NDesk.Options;
+using ConfigGen.Swampy.Service;
 using SAIG.PS.ConfigGen.Interfaces;
-using log4net;
-using ConfigGen.ConfigGen.SwampyProxy;
 
 namespace SAIG.PS.ConfigGen    
 {

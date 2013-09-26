@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
+using ConfigGen.Swampy.Service;
 using log4net;
-using ConfigGen.ConfigGen.SwampyProxy;
 using SAIG.PS.ConfigGen.Interfaces;
 
 namespace SAIG.PS.ConfigGen
@@ -53,32 +54,19 @@ namespace SAIG.PS.ConfigGen
           
 
             foreach (string environment in environmentname)
-            {
-                var request = new GetEndpointsRequest
-                    {
-                        callingApplication = "ConfigGen", 
-                        environment = environment,
-                        keys = tokens.ToArray()
-                    };
+            {                               
 
-                var endpoints = _proxy.GetEndpoints(request).GetEndpointsResult;
-
+                var endpoints = _proxy.GetEndpoints(environment, tokens.ToArray(), "ConfigGen");
 
 
                 var keyvalueReplacement = endpoints.ToDictionary(x => x.Key, y => y.Value);
 
                 string generatedConfigText = _replacer.Replace(templateText, keyvalueReplacement);
 
-                var singleRequest = new GetSingleEndpointRequest
-                    {
-                        callingApplication = "ConfigGen",
-                        environment = environment,
-                        key = string.Format("{0}.Host", appName)
-                    };
+                var servername = _proxy.GetSingleEndpoint(environment, string.Format("{0}.Host", appName),
+                                                             "ConfigGen");
 
-                string servername = _proxy.GetSingleEndpoint(singleRequest).GetSingleEndpointResult.Value;
-
-                string configName = string.Format("{0}.{1}.{2}", servername, environment, configSuffix);
+                string configName = string.Format("{0}.{1}.{2}", servername.Value, environment, configSuffix);
                 
                 _writer.Write(targetpath, configName, generatedConfigText);
             }

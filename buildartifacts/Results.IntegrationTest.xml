@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\code\git\configgen\build\ConfigGen.IntegrationTest.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-02-05" time="14:51:31">
-  <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5466" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\code\git\configgen" machine-name="14679W7N" user="fatjoh0" user-domain="SAIG" />
+<test-results name="C:\code\git\utilities\configgen\build\ConfigGen.IntegrationTest.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-09-26" time="15:15:19">
+  <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5472" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\code\git\utilities\configgen" machine-name="14679W7N" user="fatjoh0" user-domain="SAIG" />
   <culture-info current-culture="en-AU" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\code\git\configgen\build\ConfigGen.IntegrationTest.dll" executed="True" result="Failure" success="False" time="0.657" asserts="0">
+  <test-suite type="Assembly" name="C:\code\git\utilities\configgen\build\ConfigGen.IntegrationTest.dll" executed="True" result="Failure" success="False" time="0.430" asserts="0">
     <results>
-      <test-suite type="Namespace" name="SAIG" executed="True" result="Failure" success="False" time="0.651" asserts="0">
+      <test-suite type="Namespace" name="SAIG" executed="True" result="Failure" success="False" time="0.424" asserts="0">
         <results>
-          <test-suite type="Namespace" name="PS" executed="True" result="Failure" success="False" time="0.650" asserts="0">
+          <test-suite type="Namespace" name="PS" executed="True" result="Failure" success="False" time="0.423" asserts="0">
             <results>
-              <test-suite type="Namespace" name="ConfigGen" executed="True" result="Failure" success="False" time="0.650" asserts="0">
+              <test-suite type="Namespace" name="ConfigGen" executed="True" result="Failure" success="False" time="0.423" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="IntegrationTest" executed="True" result="Failure" success="False" time="0.650" asserts="0">
+                  <test-suite type="Namespace" name="IntegrationTest" executed="True" result="Failure" success="False" time="0.423" asserts="0">
                     <results>
-                      <test-suite type="TestFixture" name="Create_QVAS_Config" executed="True" result="Failure" success="False" time="0.649" asserts="0">
+                      <test-suite type="TestFixture" name="Create_QVAS_Config" executed="True" result="Failure" success="False" time="0.422" asserts="0">
                         <results>
-                          <test-case name="SAIG.PS.ConfigGen.IntegrationTest.Create_QVAS_Config.Do" executed="True" result="Error" success="False" time="0.645" asserts="0">
+                          <test-case name="SAIG.PS.ConfigGen.IntegrationTest.Create_QVAS_Config.Do" executed="True" result="Error" success="False" time="0.417" asserts="0">
                             <failure>
-                              <message><![CDATA[System.InvalidOperationException : Could not find default endpoint element that references contract 'ConfigGen.SwampyProxy.IEndpointService' in the ServiceModel client configuration section. This might be because no configuration file was found for your application, or because no endpoint element matching this contract could be found in the client element.]]></message>
-                              <stack-trace><![CDATA[at System.ServiceModel.Description.ConfigLoader.LoadChannelBehaviors(ServiceEndpoint serviceEndpoint, String configurationName)
-at System.ServiceModel.ChannelFactory.ApplyConfiguration(String configurationName, Configuration configuration)
-at System.ServiceModel.ChannelFactory.ApplyConfiguration(String configurationName)
-at System.ServiceModel.ChannelFactory.InitializeEndpoint(String configurationName, EndpointAddress address)
-at System.ServiceModel.ChannelFactory`1..ctor(String endpointConfigurationName, EndpointAddress remoteAddress)
-at System.ServiceModel.ConfigurationEndpointTrait`1.CreateSimplexFactory()
-at System.ServiceModel.ConfigurationEndpointTrait`1.CreateChannelFactory()
-at System.ServiceModel.ClientBase`1.CreateChannelFactoryRef(EndpointTrait`1 endpointTrait)
-at System.ServiceModel.ClientBase`1.InitializeChannelFactoryRef()
-at System.ServiceModel.ClientBase`1..ctor()
-at ConfigGen.ConfigGen.SwampyProxy.EndpointServiceClient..ctor() in c:\code\git\configgen\ConfigGen\Service References\ConfigGen.SwampyProxy\Reference.cs:line 236
-at SAIG.PS.ConfigGen.IntegrationTest.Create_QVAS_Config.Do() in c:\code\git\configgen\ConfigGen.IntegrationTest\Create_QVAS_Config.cs:line 20
+                              <message><![CDATA[System.ArgumentException : An item with the same key has already been added.]]></message>
+                              <stack-trace><![CDATA[at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+at SAIG.PS.ConfigGen.IntegrationTest.Create_QVAS_Config.Do() in c:\code\git\utilities\configgen\ConfigGen.IntegrationTest\Create_QVAS_Config.cs:line 26
 ]]></stack-trace>
                             </failure>
                           </test-case>
