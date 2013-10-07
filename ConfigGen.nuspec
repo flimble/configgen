@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ConfigGen</id>
+    <version>1.0.0.0</version>
+   	<title>ConfigGen</title>
+    <summary>Command line utility create config files for each environment pulled from Swampy</summary>
+    <description>Command line utility create config files for each environment pulled from Swampy</description>
+    <tags>Swampy Configuration</tags>
+    <authors>John Fattal</authors>
+  </metadata>
+  <files>
+    <file src="build\*.*" target="bin" />
+  </files>
+</package>
