@@ -26,7 +26,7 @@ namespace SAIG.PS.ConfigGen.IntegrationTest
 
             var apps = new Dictionary<string, string>
                 {
-                    {"QVAS", @"SAIG.PS.QVAS\QVAS.Host\app.config.template.xml"},                    
+                    {"jobrunner", @"C:\code\tfs\ssr\Trunk\SAIG.PS.JobRunner\SAIG.PS.JobRunner\app.config.template.xml"},                    
 
                 };
 
@@ -35,9 +35,9 @@ namespace SAIG.PS.ConfigGen.IntegrationTest
 
                 var args = new[]
                     {
-                        string.Format("-template=C:\\Code\\SAIGPS\\SSR\\Trunk\\{0}", app.Value),
+                        string.Format("-template={0}", app.Value),
                         string.Format("-outdir=GeneratedConfigs\\{0}", app.Key),
-                        @"-environments=SIT1,SIT2",
+                        @"-environments=SIT1",
                         string.Format("-applicationName={0}", app.Key)
                     };
 

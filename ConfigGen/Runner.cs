@@ -51,14 +51,23 @@ namespace SAIG.PS.ConfigGen
 
 
             if (String.IsNullOrEmpty(template))
+            {
+                _logger.Fatal("template path was null");
                 throw new ArgumentNullException(template);
+            }
 
             if (String.IsNullOrEmpty(outdir))
+            {
+                _logger.Fatal("output directory was null");
                 throw new ArgumentNullException(outdir);
+            }
 
             if (String.IsNullOrEmpty(application))
+            {
+                _logger.Fatal("application was null");
                 throw new ArgumentNullException(application);
-          
+            }
+
             _coordinator.GenerateConfigs(template, environments, configSuffix, application, outdir);
         }
 

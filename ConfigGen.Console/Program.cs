@@ -3,12 +3,16 @@ using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using ConfigGen.Swampy.Service;
 using SAIG.PS.ConfigGen.Interfaces;
+using log4net;
+using log4net.Config;
 
 namespace SAIG.PS.ConfigGen    
 {
     public class Program
     {
         private static IWindsorContainer _container;
+
+        private static readonly ILog _logger = LogManager.GetLogger(typeof(Program));
 
         private static string[] GetReadArgsFromUserInput()
         {
@@ -37,6 +41,7 @@ namespace SAIG.PS.ConfigGen
         public static int Main(string[] args)
         {
             ConfigureIOC();
+            XmlConfigurator.Configure();
 
             if(Environment.UserInteractive && args.Length == 0)
             {
@@ -52,6 +57,7 @@ namespace SAIG.PS.ConfigGen
             }
             catch (Exception e)
             {
+                _logger.Fatal(e.Message);
                 return (int) ExitCode.Failure;
             }                       
         }

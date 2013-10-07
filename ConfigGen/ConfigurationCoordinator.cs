@@ -54,8 +54,7 @@ namespace SAIG.PS.ConfigGen
           
 
             foreach (string environment in environmentname)
-            {                               
-
+            {                                               
                 var endpoints = _proxy.GetEndpoints(environment, tokens.ToArray(), "ConfigGen");
 
 
