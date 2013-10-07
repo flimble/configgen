@@ -2,6 +2,7 @@ push.bat
 TestResult.xml
 build
 build35
+buildartifacts
 artifacts
 obj
 bin
